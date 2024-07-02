@@ -5,3 +5,19 @@ config-version: 2
 
 # This setting configures which "profile" dbt uses for this project.
 profile: 'default'
+
+model-paths: ["models"]
+analysis-paths: ["analyses"]
+test-paths: ["tests"]
+seed-paths: ["seeds"]
+macro-paths: ["macros"]
+snapshot-paths: ["snapshots"]
+
+models:
+  jaffle_shop:
+    marts:
+      marketing:
+        materialized: table
+    staging:
+      jaffle_shop:
+        materialized: view
