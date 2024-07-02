@@ -1,0 +1,33 @@
+version: 2
+
+sources:
+  - name: jaffle_shop
+    description: A clone of a Postgres application database (jaffle_shop).
+    database: hive_metastore
+    schema: default
+    tables:
+      - name: jaffle_shop_customers
+        description: Raw customers data.
+        columns:
+          - name: id
+            description: Primary key for customers.
+            tests:
+              - unique
+              - not_null
+      
+      - name: jaffle_shop_orders
+        description: Raw orders data.
+        columns:
+          - name: id
+            description: Primary key for orders.
+            tests:
+              - unique
+              - not_null
+      
+  - name: stripe
+    description: A clone of a Postgres application database (stripe).
+    database: hive_metastore
+    schema: default
+    tables:
+      - name: stripe_payments
+        description: Raw payments data
